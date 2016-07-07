@@ -50,7 +50,7 @@ function replyWithRustagh(bot, message){
     attachments: [{
       "fallback": text,
       "text": text,
-      "image_url": "http://i.imgur.com/r4jvWI9.jpg"
+      "image_url": "http://i.makeagif.com/media/9-14-2015/_NQtSL.gif"
     }]
   });
 }
