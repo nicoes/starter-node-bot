@@ -47,3 +47,17 @@ controller.hears(['hey', 'hoi', 'hallo'], ['direct_message','direct_mention','me
 controller.hears(['Je lijkt wel een tomaat', 'Rooie'],['direct_message','direct_mention','mention'],function(bot,message) {
   bot.reply(message,"Hey! Rustaaaaagh!");
 });
+
+controller.hears(['Je lijkt wel een tomaat', 'Rooie'],['direct_message','direct_mention','mention'],function(bot,message) {
+  bot.reply(message,"Hey! Rustaaaaagh!");
+});
+
+controller.hears(['Je ziet er niet uit'],['direct_message','direct_mention','mention'],function(bot,message) {
+  bot.reply(message,"Moej een tuintje op je buik ofzo?");
+});
+
+controller.hears(['Wat eet je het liefst?'],['direct_message','direct_mention','mention'],function(bot,message) {
+  bot.reply(message,"Wat denk jij dan gek?");
+  bot.replyWithTyping(message, "Besguitstuiter met sallûf natuurlijk!");
+});
+
