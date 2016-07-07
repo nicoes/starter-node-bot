@@ -44,12 +44,19 @@ controller.hears(['hey', 'hoi', 'hallo'], ['direct_message','direct_mention','me
 
 });
 
-controller.hears(['Je lijkt wel een tomaat', 'Rooie'],['direct_message','direct_mention','mention'],function(bot,message) {
-  bot.reply(message,"Hey! Rustaaaaagh!");
-});
+function replyWithRustagh(bot, message){
+  var text = "Hey! Rustaaaaagh!";
+  bot.reply(message, {
+    attachments: [{
+      "fallback": text,
+      "text": text,
+      "image_url": "http://i.imgur.com/r4jvWI9.jpg"
+    }]
+  });
+}
 
 controller.hears(['Je lijkt wel een tomaat', 'Rooie'],['direct_message','direct_mention','mention'],function(bot,message) {
-  bot.reply(message,"Hey! Rustaaaaagh!");
+  replyWithRustagh(bot,message);
 });
 
 controller.hears(['Je ziet er niet uit'],['direct_message','direct_mention','mention'],function(bot,message) {
