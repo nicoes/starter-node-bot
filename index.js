@@ -37,12 +37,12 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 });
 
-//
-// controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-//   bot.reply(message, 'Hello.')
-//   bot.reply(message, 'It\'s nice to talk to you directly.')
-// })
-//
+
+controller.hears(['hoi', 'hallo'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'Heeeey gozaah.');
+  bot.reply(message, 'Alles lekkah?')
+});
+
 // controller.hears('.*', ['mention'], function (bot, message) {
 //   bot.reply(message, 'You really do care about me. :heart:')
 // })
