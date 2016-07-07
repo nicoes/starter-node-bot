@@ -1,14 +1,12 @@
-var Botkit = require('botkit');
-var env = require('node-env-file');
+var Botkit = require('botkit')
 
-env(__dirname + '/.env');
-var token = process.env.API_TOKEN;
+var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
   debug: false
-});
+})
 
 // Assume single team mode if we have a SLACK_TOKEN
 if (token) {
