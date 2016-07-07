@@ -30,7 +30,7 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.replyWithTyping(message, "Hey gozaaahs");
 });
 
-controller.hears(['hey', 'hoi', 'hallo'], ['direct_mention','direct_mention','mention'], function (bot, message) {
+controller.hears(['hey', 'hoi', 'hallo'], ['direct_message','direct_mention','mention'], function (bot, message) {
 
   controller.storage.users.get(message.user, function(err, user) {
     if (user && user.name) {
