@@ -1,12 +1,14 @@
-var Botkit = require('botkit')
+var Botkit = require('botkit');
+var env = require('node-env-file');
 
-var token = process.env.SLACK_TOKEN
+env(__dirname + '/.env');
+var token = process.env.API_TOKEN;
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
   retry: Infinity,
   debug: false
-})
+});
 
 // Assume single team mode if we have a SLACK_TOKEN
 if (token) {
@@ -19,7 +21,7 @@ if (token) {
     }
 
     console.log('Connected to Slack RTM')
-  })
+  });
 // Otherwise assume multi-team mode - setup beep boop resourcer connection
 } else {
   console.log('Starting in Beep Boop multi-team mode')
@@ -30,10 +32,11 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "Rustaghh!")
 });
 
-//
-// controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
-//   bot.reply(message, 'Hello.')
-// })
+
+controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
+  bot.reply(message, 'Hello.')
+});
+
 //
 // controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
 //   bot.reply(message, 'Hello.')
