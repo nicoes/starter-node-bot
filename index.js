@@ -36,16 +36,16 @@ controller.hears(['hey', 'hoi', 'hallo'], ['direct_message','direct_mention','me
     if (user && user.name) {
       bot.replyWithTyping(message, 'Hey '+ user.name);
     } else {
-      bot.replyWithTyping(message, 'Hey man');
+      bot.replyWithTyping(message, 'Hey gozâh');
     }
   });
 
-  bot.replyWithTyping(message, 'Alles lekkah?');
+  bot.replyWithTyping(message, 'Alles lekkâh?');
 
 });
 
 function replyWithRustagh(bot, message){
-  var text = "Hey! Rustaaaaagh!";
+  var text = "Hey! Rustââââgh!";
   bot.reply(message, {
     attachments: [{
       "fallback": text,
@@ -69,14 +69,18 @@ var sayings = [
     'Ff wachten.. komp een telex ut darmstad',
     'Ik zeg heulemaal niks.. Geef mein un bakkie pleur en un kanoh. Dan pratuh we verder.',
     'Volgend weekend lekkur lam, gek!!',
-    'Mot je een aai voáh je braedmoluh?!'
+    'Mot je een aai voáh je braedmoluh?!',
+    'Ut záh mén un baut hacheluh',
+    'Wie ut klènuh niet eert, is de mènuh niet weerd',
+    'Wie de poes nie scheert, is dâh beurt nie weert',
+    'Je ken een paar luppe voâh je gok krège, leiphànnes'
 ];
 
 function getRandomSaying(sayings){
   return sayings[Math.floor(Math.random()*sayings.length)];
 }
 
-controller.hears(['Zeg iets'],['direct_message','direct_mention','mention'],function(bot,message) {
+controller.hears(['Zeg iets', 'Wat ben je stil', 'Spreek'],['direct_message','direct_mention','mention'],function(bot,message) {
   var saying = getRandomSaying(sayings);
   bot.reply(message, saying);
 });
