@@ -63,8 +63,22 @@ controller.hears(['Je ziet er niet uit'],['direct_message','direct_mention','men
   bot.reply(message,"Moej een tuintje op je buik ofzo?");
 });
 
-controller.hears(['Wat eet je het liefst?'],['direct_message','direct_mention','mention'],function(bot,message) {
-  bot.reply(message,"Wat denk jij dan gek?");
-  bot.replyWithTyping(message, "Besguitstuiter met sallûf natuurlijk!");
+var sayings = [
+    'Ze kunne beitâh je zaag afpikke dan je pik afzage',
+    'Spreke is zilvâh zwège is gâhd',
+    'Ff wachten.. komp een telex ut darmstad',
+    'Ik zeg heulemaal niks.. Geef mein un bakkie pleur en un kanoh. Dan pratuh we verder.',
+    'Volgend weekend lekkur lam, gek!!',
+    'Mot je een aai voáh je braedmoluh?!'
+];
+
+function getRandomSaying(sayings){
+  return sayings[Math.floor(Math.random()*sayings.length)];
+}
+
+controller.hears(['Zeg iets'],['direct_message','direct_mention','mention'],function(bot,message) {
+  var saying = getRandomSaying(sayings);
+  bot.reply(message, saying);
 });
+
 
