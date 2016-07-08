@@ -86,3 +86,9 @@ controller.hears(['Zeg iets', 'Wat ben je stil', 'Spreek'],['direct_message','di
 });
 
 
+controller.hears(['Wie wint het EK?', 'Denk jij dat Portugal wint?'],['direct_message','direct_mention','mention'],function(bot,message) {
+    bot.reply(message, 'FC Den Haag 4 evâh!!');
+});
+
+
+
